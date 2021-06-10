@@ -27,6 +27,7 @@ def outcome(player, computer, p1_choice, cp_choice):
     elif p1 == 2:
         if cp == 1:
             player.health += 20
+            player.take_damage(computer.strike())
             computer.take_damage(player.parry())
         elif cp == 2:
             player.parry()
@@ -82,16 +83,20 @@ round_num = 1
 
 while run:
 
-    # Clear console at the start of round for clarity
-    clear_round()
+    clear_round()  # Clear Console after round
+
+    max_health = 150  # Max reachable health
+    slime_inc = 1  # Slime gain at start of round
 
     # Print round number and increase round num by 1
-    # Check slime levels
+    # Check health and slime
     # Provide player and computers stats
     print(f"\n====== Round {round_num} ======")
 
-    P1.slime_levels(1)
-    Cp.slime_levels(1)
+    P1.check_health(max_health)
+    Cp.check_health(max_health)
+    P1.check_slime(slime_inc)
+    Cp.check_slime(slime_inc)
     P1.stat_output()
     Cp.stat_output()
 
