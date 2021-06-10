@@ -105,8 +105,15 @@ while run:
     print(player_options)
 
     # Get player decision for this turn
-    p1_choice = int(input("Decision: "))
-    print(f"\n{P1.name} decides to {choices[p1_choice]}\n")
+    while True:
+        p1_choice = input("Decision: ")
+
+        if p1_choice in [str(i) for i in range(1, 5)]:
+            break
+        else:
+            print("Please enter a number between 1 and 4.")
+
+    print(f"\n{P1.name} decides to {choices[int(p1_choice)]}\n")
 
     # Get computer decision for this turn and print choice
     cp_choice = rand.randint(1, 4)
