@@ -2,6 +2,8 @@ import random as rand
 import os
 from character import Character
 
+clear_round = lambda: os.system("cls")
+
 
 def outcome(player, computer, p1_choice, cp_choice):
     # Takes the choices of the player and computer
@@ -60,8 +62,7 @@ def outcome(player, computer, p1_choice, cp_choice):
 
 
 def slime_levels(player):
-    # Controls the slime levels so they increment by 2 each round
-    # But do not exceed 10
+    # Increments slime by 1 each round, slime does not exceed 10
 
     if player.slime <= 10:
         player.slime += 1
@@ -85,23 +86,23 @@ round_num = 1
 
 while run:
 
-    # Print round number and increase round num by 1
-    print(f"\n====== Round {round_num} ======")
-    round_num += 1
+    # Clear console at the start of round for clarity
+    clear_round()
 
+    # Print round number and increase round num by 1
     # Check slime levels
+    # Provide player and computers stats
+    print(f"\n====== Round {round_num} ======")
+
     slime_levels(P1)
     slime_levels(Cp)
 
-    # Provide player and computers stats
     P1.stat_output()
     Cp.stat_output()
 
     choices = {1: "Strike", 2: "Parry", 3: "Block", 4: "Heal"}
-
-    print(
-        f"\nWhat will you do {P1.name}?\n\n   [1] Strike\n   [2] Parry\n   [3] Block\n   [4] Heal\n"
-    )
+    player_options = f"\nWhat will you do {P1.name}?\n\n   [1] Strike\n   [2] Parry\n   [3] Block\n   [4] Heal\n"
+    print(player_options)
 
     # Get player decision for this turn
     p1_choice = int(input("Decision: "))
@@ -121,3 +122,5 @@ while run:
     elif Cp.health <= 0:
         print("Victory!\n")
         run = False
+
+    round_num += 1
