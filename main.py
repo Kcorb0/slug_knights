@@ -101,7 +101,7 @@ while run:
     Cp.stat_output()
 
     choices = {1: "Strike", 2: "Parry", 3: "Block", 4: "Heal"}
-    player_options = f"\nWhat will you do {P1.name}?\n   [1] Strike 3s\n   [2] Parry 5s\n   [3] Block 2s\n   [4] Heal 4s\n"
+    player_options = f"\nWhat will you do {P1.name}?\n   [1] Strike 3s\n   [2] Parry 5s\n   [3] Block 2s\n   [4] Heal 6s\n"
     print(player_options)
 
     # Get player decision for this turn

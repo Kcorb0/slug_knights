@@ -41,7 +41,7 @@ class Character:
             return 30
 
     def heal(self):
-        cost = 3
+        cost = 6
         if self.slime < cost:
             print(self.slime_warning)
             return 0
