@@ -79,7 +79,8 @@ title_card = """
 print(title_card)
 P1_name = input("What is your slugs name: ").title()
 P1 = Character(P1_name)
-Cp = Character("Slugtron")
+enemy_slug = rand.choice(["Slugtron", "King Sludge", "Slick", "Slug on Wheels"])
+Cp = Character(enemy_slug)
 
 run = True
 round_num = 1
@@ -101,7 +102,7 @@ while run:
     Cp.stat_output()
 
     choices = {1: "Strike", 2: "Parry", 3: "Block", 4: "Heal"}
-    player_options = f"\nWhat will you do {P1.name}?\n\n   [1] Strike\n   [2] Parry\n   [3] Block\n   [4] Heal\n"
+    player_options = f"\nWhat will you do {P1.name}?\n   [1] Strike\n   [2] Parry\n   [3] Block\n   [4] Heal\n"
     print(player_options)
 
     # Get player decision for this turn
@@ -119,8 +120,12 @@ while run:
     if P1.health <= 0:
         print("You are dead.\n")
         run = False
+        break
     elif Cp.health <= 0:
         print("Victory!\n")
         run = False
+        break
+
+    resume = input("Press [Enter] for next round")
 
     round_num += 1
