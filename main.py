@@ -101,7 +101,7 @@ while run:
     Cp.stat_output()
 
     choices = {1: "Strike", 2: "Parry", 3: "Block", 4: "Heal"}
-    player_options = f"\nWhat will you do {P1.name}?\n   [1] Strike\n   [2] Parry\n   [3] Block\n   [4] Heal\n"
+    player_options = f"\nWhat will you do {P1.name}?\n   [1] Strike 3s\n   [2] Parry 4s\n   [3] Block 2s\n   [4] Heal 4s\n"
     print(player_options)
 
     # Get player decision for this turn
@@ -120,7 +120,7 @@ while run:
     print(f"{Cp.name} decides to {choices[cp_choice]}\n")
 
     # Decide round outcome
-    outcome(P1, Cp, p1_choice, cp_choice)
+    outcome(P1, Cp, int(p1_choice), cp_choice)
 
     # Check if the player has died
     if P1.health <= 0:
@@ -133,5 +133,7 @@ while run:
         break
 
     resume = input("Press [Enter] for next round")
+    if resume == "x":
+        Run = False
 
     round_num += 1
