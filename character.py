@@ -25,7 +25,7 @@ class Character:
 
     def Heal(self):
         self.slime -= 3
-        self.health += 30
+        self.health += 25
         return self.health
 
     def stat_output(self):
