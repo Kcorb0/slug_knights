@@ -23,7 +23,7 @@ class Character:
         self.slime -= 2
         return 30
 
-    def Heal(self):
+    def heal(self):
         self.slime -= 3
         self.health += 25
         return self.health

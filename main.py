@@ -86,7 +86,7 @@ round_num = 1
 while run:
 
     # Print round number and increase round num by 1
-    print(f"====== Round {round_num} ======")
+    print(f"\n====== Round {round_num} ======")
     round_num += 1
 
     # Check slime levels
@@ -116,8 +116,8 @@ while run:
 
     # Check if the player has died
     if P1.health <= 0:
-        print("You are dead.")
+        print("You are dead.\n")
         run = False
     elif Cp.health <= 0:
-        print("Victory!")
+        print("Victory!\n")
         run = False
