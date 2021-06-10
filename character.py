@@ -23,7 +23,7 @@ class Character:
             return self.damage
 
     def parry(self):
-        cost = 4
+        cost = 5
         if self.slime < cost:
             print(self.slime_warning)
             return 0
