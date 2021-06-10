@@ -132,8 +132,8 @@ while run:
         run = False
         break
 
-    resume = input("Press [Enter] for next round")
+    resume = input("Press [Enter] for next round or [x] to exit")
     if resume == "x":
-        Run = False
+        run = False
 
     round_num += 1
