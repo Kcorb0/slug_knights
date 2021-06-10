@@ -61,25 +61,20 @@ def outcome(player, computer, p1_choice, cp_choice):
             computer.heal()
 
 
-def slime_levels(player):
-    # Increments slime by 1 each round, slime does not exceed 10
-
-    if player.slime <= 10:
-        player.slime += 1
-        if player.slime > 10:
-            player.slime = 10
-
-
 title_card = """
-    -----------------------
-         SLUG KNIGHTS
-    -----------------------
+        
+    ░██████╗██╗░░░░░██╗░░░██╗░██████╗░  ██╗░░██╗███╗░░██╗██╗░██████╗░██╗░░██╗████████╗░██████╗
+    ██╔════╝██║░░░░░██║░░░██║██╔════╝░  ██║░██╔╝████╗░██║██║██╔════╝░██║░░██║╚══██╔══╝██╔════╝
+    ╚█████╗░██║░░░░░██║░░░██║██║░░██╗░  █████═╝░██╔██╗██║██║██║░░██╗░███████║░░░██║░░░╚█████╗░
+    ░╚═══██╗██║░░░░░██║░░░██║██║░░╚██╗  ██╔═██╗░██║╚████║██║██║░░╚██╗██╔══██║░░░██║░░░░╚═══██╗
+    ██████╔╝███████╗╚██████╔╝╚██████╔╝  ██║░╚██╗██║░╚███║██║╚██████╔╝██║░░██║░░░██║░░░██████╔╝
+    ╚═════╝░╚══════╝░╚═════╝░░╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚══╝╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═════╝░
     """
 
 print(title_card)
 P1_name = input("What is your slugs name: ").title()
 P1 = Character(P1_name)
-enemy_slug = rand.choice(["Slugtron", "King Sludge", "Slick", "Slug on Wheels"])
+enemy_slug = ["Slugtron", "King Sludge", "Slick", "Slug on Wheels"][rand.randint(0, 3)]
 Cp = Character(enemy_slug)
 
 run = True
@@ -95,9 +90,8 @@ while run:
     # Provide player and computers stats
     print(f"\n====== Round {round_num} ======")
 
-    slime_levels(P1)
-    slime_levels(Cp)
-
+    P1.slime_levels(1)
+    Cp.slime_levels(1)
     P1.stat_output()
     Cp.stat_output()
 

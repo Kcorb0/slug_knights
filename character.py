@@ -32,6 +32,13 @@ class Character:
         # Returns the attributes from the character objects
         print(f"\n{self.name}\n   HP: {self.health} | SLIME: {self.slime}")
 
+    def slime_levels(self, increment):
+        # Increments slime by 1 each round, slime does not exceed 10
+        if self.slime <= 10:
+            self.slime += 1
+            if self.slime > 10:
+                self.slime = 10
+
 
 if __name__ == "__main__":
     pass
