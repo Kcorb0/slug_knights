@@ -16,7 +16,27 @@ title_card = """
     ╚═════╝░╚══════╝░╚═════╝░░╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚══╝╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═════╝░
     """
 
+slug = """
+                        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+                        ░░░░░░░░░░░░░░░░░░░░░░▄███████████░░░░░░
+                        ░░░░░░░░░░░░░░░░░░░░▄███▀▀▀▀▀▀▀▀██░█▌░░░
+                        ░░░░░░░░░░░░░░░░░░░███░░░░░░░░░░█░▐░▌░░░
+                        ░░░░░░░░░░░░░░░░░░██░░░░░░░░░░░▐█░▐░▌░░░
+                        ░░░░░░░░░░░░░░░░░█▌░░░░░█░░░█░░▐█░▐▐░░░░
+                        ░░░░░░░░░░░░░░░░██░░▄▄▄▄░░░░░░░░█▌█▐░░░░
+                        ░░░░░░░░░░░░░░▄█▀░█▀░░░░▀█░░░░░░███▐░░░░
+                        ░░░░░░░░░░░░░███░░▌░░░░░░░█░░░░░▐█▀▀█░░░
+                        ░░░░░░▄▄▄▄████▀█▄▄▌░░░░░░░▄█▄▄▄▄███▀▀░░░
+                        ░░░░░░███████▄░░░░▀█░░░░░█▀░░░░░██░░░░░░
+                        ░░░░░░░█████████▄░░░▀▀▀▀▀░░░░▄███░░░░░░░
+                        ░░░░░░░░░░░░░░▀████▄▄▄▄▄▄██████▀░░░░░░░░
+                        ░░░░░░░░░░░░░░░░░▀▀███████▀▀▀░░░░░░░░░░░
+                        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    """
+
+
 print(title_card)
+print(slug)
 P1_name = input("What is your slugs name: ").title()
 P1 = Character(P1_name)
 enemy_slug = ["Slugtron", "King Sludge", "Slick", "Slug on Wheels"][rand.randint(0, 3)]
@@ -26,11 +46,13 @@ run = True
 round_num = 1
 
 while run:
-
     clear_round()  # Clear Console after round
 
+    print(title_card)
+    print(slug)
+
     max_health = 150  # Max reachable health
-    slime_inc = 1  # Slime gain at start of round
+    slime_inc = 2  # Slime gain at start of round
 
     # Print round number and increase round num by 1
     # Check health and slime
@@ -76,7 +98,7 @@ while run:
         run = False
         break
 
-    resume = input("Press [Enter] for next round or [x] to exit")
+    resume = input("Press [Enter] for next round or [x] to exit ")
     if resume == "x":
         run = False
 
